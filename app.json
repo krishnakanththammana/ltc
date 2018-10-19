@@ -1,0 +1,7 @@
+{
+    "name": "WebVR",
+    "description": "WebVR",
+    "repository": "https://github.com/krishnakanththammana/WebVR",
+    "keywords": ["node", "express", "static"],
+    "image": "heroku/nodejs"
+  }

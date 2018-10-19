@@ -1,0 +1,21 @@
+<md-dialog aria-label="service" class="service-dialog" ng-cloak>
+  <md-dialog-content>
+    <div class="service-dialog-data">
+      <div class="service-dialog-header"
+        style="background: url({{servicesList[selectedService].backgroundimage}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+        <i class="service-dialog-header-close fa fa-times fa-2x" ng-click="close()">
+
+        </i>
+        <div class="service-dialog-header-content">
+          <i class={{servicesList[selectedService].iconClass}}></i>
+          <span class="poiretOne-font margin-zero service-details-heading">
+            {{servicesList[selectedService].name}}
+          </span>
+        </div>
+      </div>
+      <div class="service-dialog-content">
+        <md-button class="register-service" ng-click="registerService()">Register</md-button>
+      </div>
+    </div>
+  </md-dialog-content>
+</md-dialog>

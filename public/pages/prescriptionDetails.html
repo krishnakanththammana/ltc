@@ -1,0 +1,97 @@
+<md-dialog aria-label="notification" class="notification-dialog"
+  ng-class="{'expanded-prescription-dialog': expanded}" ng-cloak>
+  <div class="notification-header">
+    <div class="prescription-dialog-image circle">
+
+    </div>
+    <div class="notification-text">
+      <span class="notification-subject">Prescription From: Dr. Bruce Banner</span>
+
+    </div>
+    <div class="close-notification">
+      <md-button class="md-icon-button close-btn" ng-click="close()">
+        <i class="fa fa-times"></i>
+      </md-button>
+      <md-button class="md-icon-button close-btn" ng-click="toggleWidth()">
+        <i class="fa fa-expand"></i>
+      </md-button>
+    </div>
+  </div>
+  <div class="medicine-details">
+    <div class="medicine-row-headings row-header">
+      <span class="medicine-name medicine-header">Name</span>
+      <span class="medicine-dosage medicine-header">Dosage</span>
+      <span class="medicine-directions medicine-header" ng-class="{'display-none': !expanded}">Directions</span>
+      <span class="medicine-quantity medicine-header" ng-class="{'display-none': !expanded}">Quantity</span>
+      <span class="medicine-date medicine-header" ng-class="{'display-none': !expanded}">Date</span>
+      <span class="medicine-prescribed medicine-header" ng-class="{'display-none': !expanded}">Prescribed</span>
+      <span class="medicine-refill-btn medicine-header">Refill</span>
+      <span class="medicine-header" ng-class="{'display-none': !expanded}"></span>
+    </div>
+    <div class="medicine-row row-items"
+      ng-repeat="item in userDetails.record.prescriptions track by $index"
+      ng-class="{'open-medicine-row': rowtoOpen === $index}">
+      <div class="medicine-row-main">
+        <span class="medicine-name" ng-click="example($index,item)">{{item.name}}</span>
+        <span class="medicine-dosage" >{{item.dosage}}</span>
+        <span class="medicine-directions " ng-class="{'display-none': !expanded}">{{item.directions}}</span>
+        <span class="medicine-quantity " ng-class="{'display-none': !expanded}">{{item.quantity}}</span>
+        <span class="medicine-date " ng-class="{'display-none': !expanded}">{{item.date}}</span>
+        <span class="medicine-prescribed " ng-class="{'display-none': !expanded}">{{item.prescribed}}</span>
+        <span class="medicine-refill-btn">
+          <md-button class="md-raised md-primary" ng-click="refillRequest()" ng-disabled="item.refill=='no'">Refill</md-button>
+        </span>
+        <md-button class="md-icon-button expand-medicine-section" ng-click="openRow($index)"
+          ng-class="{'display-none': !expanded}">
+          <i ng-class="{'flip-medicine-icon': rowtoOpen === $index}" class="fa fa-chevron-down medicine-expand-icon"></i>
+        </md-button>
+      </div>
+      <div class="medicine-row-extra" ng-class="{'display-none': rowtoOpen != $index}">
+        <div class="presMedImage"
+          style="background: url({{item.presimage}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+
+        </div>
+        <div class="reminder-content" >
+            <input  class="medImage" type='time' value='now'/>
+            <md-button ng-click="timal($index)">
+              <i class="fa fa-plus"/>
+            </md-button>
+
+            <div layout="row"  class="reminders">
+              
+              <h3>Remainders:</h3>
+              <div  class="reminder-list" ng-repeat="item1 in item.reminder track by $index">
+                <div >
+				<span class="reminder-list-time" >
+                  {{item1}}
+                </span>
+                <span class="reminder-list-remove">
+                  <md-button class="md-icon-button reminder-list-remove-button"
+                    ng-click="removeReminder($index)">
+                    <i class="fa fa-times"></i>
+                  </md-button>
+                </span>
+				</div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</md-dialog>
+<script>
+$(function(){
+
+  $('input[type="time"][value="now"]').each(function(){
+    var d = new Date(),
+        h = d.getHours(),
+        m = d.getMinutes();
+    if(h < 10) h = '0' + h;
+    if(m < 10) m = '0' + m;
+ $(this).attr({
+      'value': h + ':' + m
+  });
+  });
+
+});
+
+</script>

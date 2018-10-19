@@ -1,0 +1,26 @@
+<div class="map-section" layout="row" flex>
+  <md-card flex="20" class="map-cards md-whiteframe-18dp" layout="column">
+    <md-card-content flex layout="column">
+      <div ng-repeat="floor in mapData.floors" layout="column"
+        ng-class="{'md-whiteframe-24dp selected-floor': selectedFloor === $index}">
+        <md-list-item class="floor-number" ng-click="selectFloor($index)">
+          {{floor.number}}
+        </md-list-item>
+        <div class="buildings-list" layout="column"
+          ng-class="{'floor-selected': selectedFloor === $index}">
+          <md-list-item ng-repeat="building in floor.buildings"
+            ng-click="selectBuilding($index)" class="building-list-item md-whiteframe-8dp">
+            {{building.name}}
+          </md-list-item>
+        </div>
+      </div>
+    </md-card-content>
+  </md-card>
+  <md-card flex="80" class="map-cards md-whiteframe-18dp" layout="column">
+    <md-card-content flex layout="column">
+      <canvas id="myCanvas" width="900" height="450">
+        <p>Your browser doesn't support this map data.</p>
+      </canvas>
+    </md-card-content>
+  </md-card>
+</div>

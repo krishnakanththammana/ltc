@@ -1,0 +1,66 @@
+<div flex="" layout="column" class="expense-main">
+    <div flex="95" class="expense-content" layout="row">
+        <div class="expense-main-content" flex="70" layout="column">
+            <div layout="column" flex>
+                <md-card class="md-whiteframe-10dp amount-block" layout "column" flex>
+                    <md-card-content class="main-content-data" layout="column" flex>
+                        <h4 class="margin-zero amount-detail">Total cost of procedure</h4>
+                        <div flex="5"></div>
+                        <div flex="5" class="first-cost">
+                            <span class="expense-text ">Procedure Cost</span>
+                            <span class="expense-amount">$12,4185</span>
+                        </div>
+                        <div flex="5">
+                            <span class="expense-text"><i class="fa fa-plus-circle fa-lg"></i>Medical Surgical Surplus</span>
+                            <span class="expense-amount">$12,41</span>
+                        </div>
+                        <div flex="5">
+                            <span class="expense-text"><i class="fa fa-plus-circle fa-lg"></i>Clinical Laboratory</span>
+                            <span class="expense-amount">$12,418</span>
+                        </div>
+                    </md-card-content>
+                </md-card>
+                <md-card class="md-whiteframe-10dp insurance-block" layout "column" flex>
+                    <md-card-content class="main-content-data" layout="column" flex>
+                        <h4 class="margin-zero amount-detail1">What your insurance pays</h4>
+                        <div flex="5"></div>
+                        <div flex="5">
+                            <span class="expense-text"><i class="fa fa-plus-circle fa-lg"></i>Plan Coverage Amount</span>
+                            <span class="expense-amount">$12,41</span>
+                        </div>
+                        <div flex="5">
+                            <span class="expense-text"><i class="fa fa-plus-circle fa-lg"></i>Negotiated Discount</span>
+                            <span class="expense-amount">$12,418</span>
+                        </div>
+                    </md-card-content>
+                </md-card>
+                <md-card class="md-whiteframe-10dp pocket-block" layout "column" flex>
+                    <md-card-content class="main-content-data" layout="column" flex>
+                        <h4 class="margin-zero amount-detail2">Your estimated out of pocket</h4>
+                        <div flex="5"></div>
+                        <div flex="5">
+                            <span class="expense-text"><i class="fa fa-plus-circle fa-lg"></i>Your Deductible</span>
+                            <span class="expense-amount">$12,41</span>
+                        </div>
+                        <div flex="5">
+                            <span class="expense-text"><i class="fa fa-plus-circle fa-lg"></i>Co-Insurance</span>
+                            <span class="expense-amount">$12,418</span>
+                        </div>
+                        <md-button class="pay-now-btn" ng-click="openPayDialog($event)">
+                          Pay Now
+                        </md-button>
+                    </md-card-content>
+                </md-card>
+            </div>
+        </div>
+        <div class="expense-side-content" layout="column" flex="30">
+            <md-card class="md-whiteframe-16dp side-content-card" flex>
+                <md-card-content flex>
+                    <md-button class="md-raised" ng-click="showDetails($event)">
+                        View Details
+                    </md-button>
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
+</div>

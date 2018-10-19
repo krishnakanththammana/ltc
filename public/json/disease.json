@@ -1,0 +1,66 @@
+[{
+  "overview":{
+    "title":"cancer",
+    "description":"Cancer is a group of diseases involving abnormal cell growth with the potential to invade or spread to other parts of the body. Not all tumors are cancerous; benign tumors do not spread to other parts of the body. Possible signs and symptoms include a lump, abnormal bleeding, prolonged cough, unexplained weight loss and a change in bowel movements. While these symptoms may indicate cancer, they may have other causes."
+  },
+  "symptoms":[{
+	"name": "Backpain",
+	"imagePath": "../images/backpain.png"
+  },{
+	"name": "Vomitings",
+	"imagePath": "../images/vomitings.png"
+  },{
+	"name": "migrane",
+	"imagePath": "../images/migrane.png"
+  },{
+	"name": "Cold",
+	"imagePath": "../images/cold.png"
+  }],
+  "types":[{
+    "type":"Advanced Cancer",
+    "description":"Description for Advanced Cancer"
+  },{
+    "type":"Bone Cancer",
+    "description":"Description for Bone Cancer"
+  },{
+    "type":"Blood Cancer",
+    "description":"Description for Blood Cancer"
+  },{
+    "type":"Lung Cancer",
+    "description":"Description for Lung Cancer"
+  },{
+    "type":"Brain Cancer",
+    "description":"Description for Brain Cancer"
+  },{
+    "type":"Liver Cancer",
+    "description":"Description for Liver Cancer"
+  }]
+},{
+  "overview":{
+    "title":"Diabetes",
+    "description":"Cancer is a group of diseases involving abnormal cell growth with the potential to invade or spread to other parts of the body. Not all tumors are cancerous; benign tumors do not spread to other parts of the body. Possible signs and symptoms include a lump, abnormal bleeding, prolonged cough, unexplained weight loss and a change in bowel movements. While these symptoms may indicate cancer, they may have other causes."
+  },  
+  "symptoms":[{
+	"name": "HeadAche",
+	"imagePath": "../images/headache.png"
+  },{
+	"name": "Stomach Pain",
+	"imagePath": "../images/stomachpain.png"
+  },{
+	"name": "Motions",
+	"imagePath": "../images/motions.png"
+  },{
+	"name": "Cough",
+	"imagePath": "../images/cough.png"
+  }],
+  "types":[{
+    "type":"Type 1 Diabetes",
+    "description":"Description for Advanced Cancer"
+  },{
+    "type":"Type 2 Diabetes",
+    "description":"Description for Bone Cancer"
+  },{
+    "type":"gestational diabetes",
+    "description":"Description for Blood Cancer"
+  }]
+}]

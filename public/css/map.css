@@ -1,0 +1,49 @@
+#myCanvas {
+  background: #e0e0e0;
+}
+.map-section {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.map-cards {
+  height: 90%;
+  margin: 10px;
+}
+.buildings-list {
+  width: 100%;
+  height: 0px;
+  transition: all 300ms ease-in-out;
+}
+.building-list-item {
+  transform: scale(0);
+  width: 90%;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  box-shadow: inset 0px 0px 0px #1e88e5;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.selected-floor {
+  border: 1px solid #e0e0e0;
+}
+.floor-number {
+  box-shadow: inset 0px 0px 0px #1e88e5;
+  border: 1px solid #eee;
+  transition: all 300ms ease-in-out;
+}
+.selected-floor .floor-number, .floor-number:hover {
+  box-shadow: inset 3px 0px 0px #1e88e5 !important;
+  border: 1px solid #1e88e5 !important;
+}
+.building-list-item:hover {
+  box-shadow: inset 3px 0px 0px #1e88e5;
+  border: 1px solid #1e88e5;
+}
+.floor-selected {
+  height: auto !important;
+}
+.floor-selected .building-list-item {
+  transform: scale(1) !important;
+}

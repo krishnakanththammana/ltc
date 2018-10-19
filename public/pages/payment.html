@@ -1,0 +1,38 @@
+<md-dialog aria-label="notification" class="payment-dialog" layout="column" ng-cloak>
+  <div layout="column" flex>
+    <div class="payment-header-section">
+      <div class="payment-stage md-whiteframe-6dp"
+        ng-click="changePaymentMode(0)"
+        ng-class="{'payment-stage-selected md-whiteframe-24dp': paymentStage === 0, 'payment-arrow': paymentStage != 0}">
+          <h3>Payment Amount</h3>
+      </div>
+      <div class="payment-stage md-whiteframe-6dp"
+        ng-click="changePaymentMode(1)"
+        ng-class="{'payment-stage-selected md-whiteframe-24dp': paymentStage === 1, 'payment-arrow': paymentStage != 1}">
+          <h3>Payment Details</h3>
+      </div>
+      <div class="payment-stage md-whiteframe-6dp"
+        ng-click="changePaymentMode(2)"
+        ng-class="{'payment-stage-selected md-whiteframe-24dp': paymentStage === 2, 'payment-arrow': paymentStage != 2}">
+          <h3>Confirm</h3>
+      </div>
+    </div>
+    <div class="payment-main-section">
+      <div class="payment-main-amount"
+        ng-class="{'payment-main-selected': paymentStage === 0}">
+        <div class="header">
+          
+        </div>
+        Amount
+      </div>
+      <div class="payment-main-type"
+        ng-class="{'payment-main-selected': paymentStage === 1}">
+        Type
+      </div>
+      <div class="payment-main-confirm"
+        ng-class="{'payment-main-selected': paymentStage === 2}">
+        Confirm
+      </div>
+    </div>
+  </div>
+</md-dialog>

@@ -1,0 +1,214 @@
+.expense-main {
+
+}
+.expense-workflow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.expense-main-content {
+
+}
+.expense-side-content {
+
+}
+.main-content-card {
+  border: 1px solid #eee;
+}
+.main-content-data {
+  padding: 5px;
+}
+.expense-nav {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.expense-nav-item {
+  position: relative;
+  margin: auto 0;
+  margin-top: 5px;
+  height: 65px;
+  width: 65px;
+  border-radius: 100%;
+  border: 1px solid #9a9a9a;
+  color: #9a9a9a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transform: scale(1);
+  transition: all 350ms ease-in-out;
+}
+.expense-nav-item-selected .expense-nav-heading{
+  color: #1e88e5;
+}
+.expense-nav-item:hover {
+  border: 0px solid #9a9a9a;
+  transform: scale(0.9);
+  background: #9a9a9a;
+  color: #fff;
+}
+.expense-nav-item-selected {
+  background: #1e88e5 !important;
+  color: #fff;
+  border: 0px solid #9a9a9a;
+}
+.expense-nav-item:focus {
+  outline: none;
+}
+.expense-dialog-content {
+  overflow: hidden;
+}
+.expense-content-card {
+  height: 75%;
+  width: 100%;
+  background: #fff;
+  padding:20px;
+}
+.expense-nav-heading {
+  text-align: center;
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  left: 0;
+  color: #9a9a9a;
+  font-weight: bold;
+  transition: all 350ms ease-in-out;
+}
+.payment-dialog {
+  width: 80%;
+  height: 80%;
+  background: #eeeeee;
+  border-radius: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .expense-dialog {
+    width: 50%;
+    height: 80%;
+    background: #eeeeee;
+  }
+}
+@media only screen and (min-width:500px) and (max-width:768px) {
+  .expense-dialog {
+    width: 80%;
+    height: 80%;
+    background: #eeeeee;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .expense-dialog {
+    width: 80%;
+    height: 80%;
+    background: #eeeeee;
+  }
+}
+.expense-dialog-details{
+	margin:10px;
+}
+.expense-text{
+	float:left;
+}
+.expense-amount{
+	float:right;
+}
+.amount-detail, .amount-detail1, .amount-detail2{
+  font-size: 1.3em;
+}
+.amount-block, .insurance-block, .pocket-block {
+  	color:#fff;
+}
+.amount-block .fa, .insurance-block .fa, .pocket-block .fa {
+  	padding: 15px;
+}
+.amount-block {
+  background: #4D7EA8;
+}
+.insurance-block {
+  background: #828489;
+}
+.pocket-block {
+  background: #272932;
+  position: relative;
+}
+.pay-now-btn {
+  position: absolute;
+  bottom: 2px;
+  right: 10px;
+}
+.payment-header-section {
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.payment-main-section {
+  height: 90%;
+  position: relative;
+}
+.payment-main-amount, .payment-main-type, .payment-main-confirm {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding-top: 30px;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+.payment-main-selected {
+  opacity: 1;
+}
+.payment-stage {
+  width: 25%;
+  height: 90%;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  background: #e0e0e0;
+  border-radius: 10px;
+  transform: scale(0.9);
+  transition: all 300ms ease-in-out;
+}
+.payment-stage-selected {
+  background: #1e88e5;
+  color: #fff;
+  transform: scale(1);
+  transition: all 300ms ease-in-out;
+}
+.payment-stage:focus {
+  outline: none;
+}
+.payment-arrow::after {
+  width: 0;
+  left: 40%;
+  height: 0;
+  content: '';
+  bottom: -35px;
+  position: absolute;
+  border-top: 20px solid #e0e0e0;
+  transition: all 300ms ease-in-out;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+.payment-stage-selected::after {
+  width: 0;
+  left: 40%;
+  height: 0;
+  content: '';
+  bottom: -35px;
+  position: absolute;
+  border-top: 20px solid #1e88e5;
+  transition: all 300ms ease-in-out;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}

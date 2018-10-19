@@ -1,0 +1,66 @@
+/* ******************* mobile css start *******************  */
+@media only screen and (max-width: 600px) {
+  .desktop-heading{
+    display: none;
+  }
+  .new-service-item {
+    width: 100%;
+    height: 50%;
+    float: left;
+    position: relative;
+    border: 1px solid #fff;
+  }
+  .service-dialog {
+    height: 80%;
+    width: 80%;
+    border-radius: 50px;
+  }
+  .count-down-timer {
+
+  }
+  .mobile-heading{
+    display: block;
+    white-space: nowrap;
+  }
+  .section-row-one{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 200px;
+  }
+  .disease-details{
+    display: flex;
+    flex-direction: column;
+  }
+  .disease-description{
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .overview-section:nth-of-type(2n-1) {
+    text-shadow: 2px 2px 0px #ffffff;
+  }
+  .section-row-one-card{
+    width: 100%;
+  }
+  .symptoms-row-one-card{
+    width: 100%;
+  }
+  .services-row-one-card{
+    width: 100%;
+  }
+  .login-content{
+    width: 90%;
+    position: fixed;
+    top: 50%;
+    left: 15%;
+  }
+  .login-heading{
+    margin-top: 5%;
+  }
+}
+/* ******************** mobile css end ********************  */

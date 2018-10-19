@@ -1,0 +1,344 @@
+.weight-section {
+  position: relative;
+}
+#weight-graph {
+  left: 10px;
+  top: -100px;
+  z-index: 10;
+  position: absolute;
+  transform: scale(0.9);
+}
+#weight-graph .axis text {
+  font: 10px sans-serif;
+  fill: #fff;
+}
+
+#weight-graph .axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+#weight-graph .bar {
+  fill: steelblue;
+  fill-opacity: .9;
+}
+
+#weight-graph .x.axis path {
+  display: none;
+}
+
+#weight-graph label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+#steps path {  stroke: #fff; }
+#steps path:hover {  opacity:0.9; }
+#steps rect:hover {  fill:blue; }
+#steps .axis {  font: 10px sans-serif; }
+#steps .legend tr{    border-bottom:1px solid grey; }
+#steps .legend tr:first-child{    border-top:1px solid grey; }
+
+#steps .axis path,
+#steps .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+#steps .x.axis path {  display: none; }
+#steps .legend{
+    margin-bottom:76px;
+    display:inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+	background: 	#FFE4C4;
+}
+#steps .legend td{
+    padding:4px 5px;
+    vertical-align:bottom;
+}
+#steps .legendFreq, .legendPerc{
+    align:right;
+    width:50px;
+}
+#steps .margin-zero {
+   margin: 72px;
+}
+#steps .bar--positive {
+  fill: steelblue;
+}
+
+#steps .bar--negative {
+  fill: darkorange;
+}
+
+#steps .axis text {
+  font: 10px sans-serif;
+}
+
+#steps .axis path,
+#steps .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+#distance-graph {
+	z-index: 10;
+	transform: scale(0.8);
+	position: absolute;
+	top: -100px;
+	left: 0px;
+}
+#distance-graph .axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+#distance-graph .area {
+  fill: steelblue;
+}
+#distance-graph .y text {
+  font-size: 1em;
+  left: 20px;
+}
+#weight-graph .y text {
+  font-size: 1em;
+  left: 20px;
+}
+#sleep-graph .y text {
+  font-size: 1em !important;
+}
+
+#sleep-graph {
+	transform: scale(0.8);
+	margin-top: 50px;
+	background: rgba(255,255,255,0.6);
+}
+.calories-block {
+	position: absolute;
+	top: 200px;
+	left: 220px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.calories-today {
+	display: flex;
+	flex-direction: column;
+}
+.calories-today-text {
+	text-align: center;
+	color:#805615;
+	margin-left: -20px;
+}
+.sleep-block {
+	position: absolute;
+	top: 50px;
+	left: 170px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.sleep-selection {
+	height: auto;
+	margin: auto 0;
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+}
+.sleep-selection-btn {
+	background: transparent;
+	color: #e4100d;
+	border: 1px solid #e4100d;
+	margin: 10px 0;
+	cursor: pointer;
+	transition: all 300ms ease-in-out;
+}
+.sleep-selection-btn:hover {
+	background: #e4100d;
+	color: #fff;
+	border: 1px solid #fff;
+}
+#sleep-graph .bar--positive {
+  fill: steelblue;
+}
+
+#sleep-graph .bar--negative {
+  fill: darkorange;
+}
+
+#sleep-graph .axis text {
+  font: 10px sans-serif;
+}
+
+#sleep-graph .axis path,
+#sleep-graph .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.service-section {
+	width: 100%;
+  display: flex;
+	position: relative;
+  flex-direction: column;
+}
+.service-section:nth-child(2n) {
+  height: 120vh;
+}
+.service-section:nth-child(2n-1) {
+  height: 60vh;
+}
+.service-intro {
+  height: 35vh !important;
+}
+.slant:nth-child(2n-1)::after {
+	content: '';
+  z-index: 1;
+	width: 100%;
+	height: 35vh;
+	bottom: -16vh;
+  position: absolute;
+	transform: skewY(8deg);
+}
+.service-non-intro:nth-child(2n-1)::before {
+  content: '';
+	width: 100%;
+	height: 32vh;
+	top: -16vh;
+  position: absolute;
+	transform: skewY(8deg);
+}
+.service-non-intro:nth-child(2n)::before {
+  background: #fff;
+}
+.service-non-intro:nth-child(2n-1)::before {
+  background: #e4100d;
+}
+.service-last::after {
+	display: none !important;
+}
+.service-last {
+	align-items: flex-start !important;
+}
+.service-last p {
+	margin-top: -20vh;
+}
+.services-block {
+  background: #e4100d;
+}
+.service-non-intro:nth-child(2n-1) {
+
+}
+.service-non-intro:nth-child(2n) {
+
+}
+.service-section:nth-child(2n-1) {
+	background: #e4100d;
+  align-items: flex-end;
+}
+.service-section:nth-child(2n) {
+
+  align-items: flex-start;
+}
+.slant:nth-child(2n-1)::after {
+	background: #e4100d;
+}
+.slant:nth-child(2n)::after {
+	background: transparent;
+}
+.service-section-header, .service-intro p{
+  z-index: 1;
+  font-size: 4em;
+  text-transform: capitalize;
+}
+.header-left {
+  padding-left: 2vw;
+}
+.header-right {
+  padding-right: 5vw;
+}
+.white-text {
+  color: #fff;
+}
+.tomato-text {
+  color: #e4100d;
+}
+.service-hospitality {
+	position: relative;
+  background: url("../images/sleep.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.service-staff {
+  background: url("../images/calories.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.service-facilities {
+  background: url("../images/exercise.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.set-goals {
+	width: auto;
+	height: 90%;
+	display: flex;
+	color: #fff;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 3;
+  margin-left: 20px;
+}
+.range-container {
+	height: 100px;
+	overflow: hidden;
+}
+.range-selected {
+	transform: scale(1.2) !important;
+}
+.dynamic-container {
+	margin-top: 0px;
+	height: 100%;
+	transition: all 300ms ease-in-out;
+}
+span:focus {
+	outline: none;
+}
+.goal-value {
+	text-align: center;
+	height: 30px;
+	padding: 5px 0;
+	margin: 5px 0;
+	transform: scale(1);
+	transition: all 300ms ease-in-out;
+}
+.buttonDes{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.selectr{
+	z-index: 10;
+	height: 30px;
+	width: 100px;
+	color: #fff;
+	text-align: center;
+	font-size: 1.4em;
+}
+.container-setgoals{
+	position: absolute;
+}

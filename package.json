@@ -1,0 +1,30 @@
+{
+  "name": "healthcareapp",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "6.11.2"
+  },
+  "main": "server.js",
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "cord": "^1.0.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "file-system": "^2.2.2",
+    "path": "^0.12.7",
+    "walk": "^2.3.14",
+    "mongodb": "^2.2.33"
+  }
+}

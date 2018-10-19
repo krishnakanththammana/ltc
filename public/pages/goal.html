@@ -1,0 +1,139 @@
+<div flex class="services-block">
+  <div class="service-section slant service-intro">
+    <p class="header-right white-text animated zoomInLeft">Goals</p>
+  </div>
+  <div class="service-section slant service-non-intro service-facilities">
+    <p class="service-section-header header-left tomato-text animated zoomInRight">
+      Steps
+    </p>
+    <div id="steps">
+
+    </div>
+  </div>
+  <div class="service-section slant service-non-intro distance-section">
+    <p class="service-section-header header-right white-text">
+      Distance
+    </p>
+    <div id="distance-graph">
+    </div>
+  </div>
+  <div class="service-section slant service-non-intro service-staff">
+    <p class="service-section-header header-left tomato-text">
+      Calories <br> burnt
+    </p>
+    <div class="calories-block">
+      <div class="calories-today">
+        <h2 class="calories-today-text">
+          Today
+        </h2>
+        <svg id="today-calories" width="97%" height="250"></svg>
+      </div>
+      <div class="calories-today">
+        <h2 class="calories-today-text">Week</h2>
+        <svg id="week-calories" width="97%" height="250"></svg>
+      </div>
+      <div class="calories-today">
+        <h2 class="calories-today-text">Month</h2>
+        <svg id="month-calories" width="97%" height="250"></svg>
+      </div>
+    </div>
+  </div>
+  <div class="service-section slant service-non-intro weight-section">
+    <p class="service-section-header header-right white-text">
+      Weight
+    </p>
+    <div id="weight-graph">
+      <label><input id="weight-chkbox" type="checkbox"> Sort values</label>
+    </div>
+  </div>
+  <div class="service-section slant service-non-intro service-hospitality">
+    <p class="service-section-header header-left tomato-text">
+      Sleep Analysis
+    </p>
+    <div class="sleep-block">
+      <div class="sleep-selection">
+        <md-list-item class="sleep-selection-btn"
+          ng-repeat="item in sleepData" ng-click="selectSleepData($index)">
+          {{item.name}}
+        </md-list-item>
+      </div>
+      <div id="sleep-graph"></div>
+    </div>
+  </div>
+  <div class="service-section slant service-non-intro service-last">
+    <p class="service-section-header header-left white-text">Set Goals</p>
+    <div layout="row"  class="container-setgoals">
+      <div class="set-goals">
+        <span><h2>Steps/day</h2></span>
+        <span ng-click="increase()"><i class="fa fa-chevron-up fa-3x"></i></span>
+        <div class="range-container">
+          <div class="dynamic-container" style="margin-top: {{rangemargin}}px">
+            <div class="goal-value" ng-repeat="item in myrange"
+              ng-class="{'range-selected': selectedRange === $index}">
+              {{item}}
+            </div>
+          </div>
+        </div>
+        <span ng-click="decrease()"><i class="fa fa-chevron-down fa-3x"></i></span>
+      </div>
+      <div class="buttonDes">
+        <span class="selectr">
+          {{selectedRange}}
+        </span>
+      </div>
+      <div class="set-goals">
+        <span><h2>Distance travelled/day</h2></span>
+        <span ng-click="increase()"><i class="fa fa-chevron-up fa-3x"></i></span>
+        <div class="range-container">
+          <div class="dynamic-container" style="margin-top: {{rangemargin}}px">
+            <div class="goal-value" ng-repeat="item in myrange"
+              ng-class="{'range-selected': selectedRange === $index}">
+              {{item}}
+            </div>
+          </div>
+        </div>
+        <span ng-click="decrease()"><i class="fa fa-chevron-down fa-3x"></i></span>
+      </div>
+      <div class="buttonDes">
+        <span class="selectr">
+          {{selectedRange}}
+        </span>
+      </div>
+      <div class="set-goals">
+        <span><h2>Calories/day</h2></span>
+        <span ng-click="increase()"><i class="fa fa-chevron-up fa-3x"></i></span>
+        <div class="range-container">
+          <div class="dynamic-container" style="margin-top: {{rangemargin}}px">
+            <div class="goal-value" ng-repeat="item in myrange"
+              ng-class="{'range-selected': selectedRange === $index}">
+              {{item}}
+            </div>
+          </div>
+        </div>
+        <span ng-click="decrease()"><i class="fa fa-chevron-down fa-3x"></i></span>
+      </div>
+      <div class="buttonDes">
+        <span class="selectr">
+          {{selectedRange}}
+        </span>
+      </div>
+      <div class="set-goals">
+        <span><h2>Sleeping hours/day</h2></span>
+        <span ng-click="increase()"><i class="fa fa-chevron-up fa-3x"></i></span>
+        <div class="range-container">
+          <div class="dynamic-container" style="margin-top: {{rangemargin}}px">
+            <div class="goal-value" ng-repeat="item in myrange"
+              ng-class="{'range-selected': selectedRange === $index}">
+              {{item}}
+            </div>
+          </div>
+        </div>
+        <span ng-click="decrease()"><i class="fa fa-chevron-down fa-3x"></i></span>
+      </div>
+      <div class="buttonDes">
+        <span class="selectr">
+          {{selectedRange}}
+        </span>
+      </div>
+  </div>
+</div>

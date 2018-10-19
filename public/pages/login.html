@@ -1,0 +1,24 @@
+<section class="login-section" id="section-login" layout="column" layout-align="center center" flex="">
+
+    <md-content class="full-width full-height login-section-content"  layout="column">
+      <div class="login-heading full-width animated slideInDown">
+        <span>TCS Patient Care Application</span>
+      </div>
+      <div class="login-content"  id="username-box" layout="row">
+        <form class="full-width">
+          <input  class="login-input" placeholder="Username" ng-model="username" flex>
+          <md-button class="md-icon-button" type="submit" ng-click="usernameClicked()">
+            <i class="fa fa-arrow-right"></i>
+          </md-button>
+        </form>
+      </div>
+      <div class="login-content hide" id="password-box" layout="row">
+        <form class="full-width">
+          <input  class="login-input seventyFive-width" placeholder="Password" type="password" flex>
+          <md-button class="md-icon-button" type="submit" ng-click="login()">
+            <i class="fa fa-check"></i>
+          </md-button>
+        </form>
+      </div>
+    </md-content>
+</section>

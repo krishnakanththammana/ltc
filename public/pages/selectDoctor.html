@@ -1,0 +1,69 @@
+<md-dialog aria-label="Doc" class="doctor-dialog" ng-cloak>
+  <form>
+    <md-toolbar class="dialog-toolbar">
+      <div class="md-toolbar-tools">
+        <h1 class="font-600">Select a Doctor</h1>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content doctor-dialog-content" layout="row">
+        <md-list-item ng-repeat="item in doctors" ng-click="docSelected($index)"
+          class="doctors-list">
+          <div layout="row" flex>
+            <div flex="20" layout="column" layout-align="center center" class="select-doctor-image"
+              style="background: url({{item.imagepath}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+
+            </div>
+            <div flex="20"></div>
+            <div flex="60" layout="column">
+              <div class="doctor-card-val" layout="row" layout-align="start start" flex>
+                <span flex="20"></span>
+                <span flex="20"  class="font-600">
+                  Name:
+                </span>
+                <span flex="20"></span>
+                <span class="font-600" flex="20">
+                  {{item.name}}
+                </span>
+                <span flex="20"></span>
+              </div>
+              <div class="doctor-card-val" layout="row" layout-align="start start" flex>
+                <span flex="20"></span>
+                <span class="font-600" flex="20">
+                  Department:
+                </span>
+                <span flex="20"></span>
+                <span class="font-600" flex="20">
+                  {{item.department}}
+                </span>
+                <span flex="20"></span>
+              </div>
+              <div class="doctor-card-val" layout="row" layout-align="start start" flex>
+                <span flex="20"></span>
+                <span class="font-600" flex="20">
+                  Email:
+                </span>
+                <span flex="20"></span>
+                <span class="font-600" flex="20">
+                  {{item.email}}
+                </span>
+                <span flex="20"></span>
+              </div>
+              <div class="doctor-card-val" layout="row" layout-align="start start" flex>
+                <span flex="20"></span>
+                <span class="font-600" flex="20">
+                  Phone:
+                </span>
+                <span flex="20"></span>
+                <span class="font-600" flex="20">
+                  {{item.phone}}
+                </span>
+                <span flex="20"></span>
+              </div>
+            </div>
+          </div>
+        </md-list-item>
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>

@@ -1,0 +1,150 @@
+<md-dialog aria-label="Per" class="personal-dialog" ng-cloak>
+    <md-dialog-content>
+		<md-tabs md-dynamic-height md-border-bottom class="md-warn">
+			<md-tab label="Emergency Contacts">
+				<md-content>
+					<div flex layout="column">
+						<md-list-item ng-repeat="item in personal" class="personal-list">
+							<md-card flex layout="row">
+								<md-card-content flex layout="row">
+									<div flex="70" class="personal-heading" layout="column">
+										<span>
+											<h3>{{item.department}}: </h3>
+										</span>
+										<div class="personal-card-val" layout="row" layout-align="start start" flex>
+											<span flex="5"></span>
+											<span flex="20" class="font-600">
+												Name:
+											</span>
+											<span flex="20"></span>
+											<span class="font-600" flex="20">
+												{{item.name}}
+											</span>
+											<span flex="5"></span>
+										</div>
+										<div class="personal-card-val" layout="row" layout-align="start start" flex>
+											<span flex="5"></span>
+											<span class="font-600" flex="20">
+												Department:
+											</span>
+											<span flex="5"></span>
+											<span class="font-600" flex="20">
+												{{item.department}}
+											</span>
+											<span flex="5"></span>
+										</div>
+										<div class="personal-card-val" layout="row" layout-align="start start" flex>
+											<span flex="5"></span>
+											<span class="font-600" flex="20">
+												Email:
+											</span>
+											<span flex="5"></span>
+											<span class="font-600" flex="20">
+												{{item.email}}
+											</span>
+											<span flex="5"></span>
+										</div>
+										<div class="personal-card-val" layout="row" layout-align="start start" flex>
+											<span flex="5"></span>
+											<span class="font-600" flex="20">
+												Phone:
+											</span>
+											<span flex="5"></span>
+											<span class="font-600" flex="20">
+												{{item.phone}}
+											</span>
+											<span flex="5"></span>
+										</div>
+                    <div class="personal-card-val" layout="row" layout-align="start start" flex>
+                      <md-button class="md-icon-button"><i class="fa fa-phone"></i></md-button>
+                      <md-button class="md-icon-button"><i class="fa fa-envelope"></i></md-button>
+                      <md-button class="md-icon-button"><i class="fa fa-whatsapp"></i></md-button>
+                      <md-button class="md-icon-button"><i class="fa fa-map-marker"></i></md-button>
+                      <md-button class="md-icon-button"><i class="fa fa-video-camera"></i></md-button>
+										</div>
+
+									</div>
+									<div flex="30" layout="column" layout-align="center center" class="select-personal-image" style="background: url({{item.imagepath}});background-repeat: no-repeat;background-position: center;background-size: contain;">
+
+									</div>
+								</md-card-content>
+							</md-card>
+						</md-list-item>
+					</div>
+				</md-content>
+			</md-tab>
+      <md-tab label="Hospital Contacts">
+        <md-content>
+          <div flex layout="column">
+            <md-list-item ng-repeat="item in morePersonal" class="personal-list">
+              <md-card flex layout="row">
+                <md-card-content flex layout="row">
+                  <div flex="70" class="personal-heading" layout="column">
+                    <span>
+                      <h3>{{item.department}}: </h3>
+                    </span>
+                    <div class="personal-card-val" layout="row" layout-align="start start" flex>
+                      <span flex="5"></span>
+                      <span flex="20" class="font-600">
+                        Name:
+                      </span>
+                      <span flex="20"></span>
+                      <span class="font-600" flex="20">
+                        {{item.name}}
+                      </span>
+                      <span flex="5"></span>
+                    </div>
+                    <div class="personal-card-val" layout="row" layout-align="start start" flex>
+                      <span flex="5"></span>
+                      <span class="font-600" flex="20">
+                        Department:
+                      </span>
+                      <span flex="5"></span>
+                      <span class="font-600" flex="20">
+                        {{item.department}}
+                      </span>
+                      <span flex="5"></span>
+                    </div>
+                    <div class="personal-card-val" layout="row" layout-align="start start" flex>
+                      <span flex="5"></span>
+                      <span class="font-600" flex="20">
+                        Email:
+                      </span>
+                      <span flex="5"></span>
+                      <span class="font-600" flex="20">
+                        {{item.email}}
+                      </span>
+                      <span flex="5"></span>
+                    </div>
+                    <div class="personal-card-val" layout="row" layout-align="start start" flex>
+                      <span flex="5"></span>
+                      <span class="font-600" flex="20">
+                        Phone:
+                      </span>
+                      <span flex="5"></span>
+                      <span class="font-600" flex="20">
+                        {{item.phone}}
+                      </span>
+                      <span flex="5"></span>
+                    </div>
+                    <div class="personal-card-val" layout="row" layout-align="start start" flex>
+                      <md-button class="md-icon-button"><i class="fa fa-phone"></i></md-button>
+                      <md-button class="md-icon-button"><i class="fa fa-envelope"></i></md-button>
+                      <md-button class="md-icon-button"><i class="fa fa-whatsapp"></i></md-button>
+                      <md-button class="md-icon-button"><i class="fa fa-map-marker"></i></md-button>
+                      <md-button class="md-icon-button"><i class="fa fa-video-camera"></i></md-button>
+                    </div>
+
+                  </div>
+                  <div flex="30" layout="column" layout-align="center center" class="select-personal-image" style="background: url({{item.imagepath}});background-repeat: no-repeat;background-position: center;background-size: contain;">
+
+                  </div>
+                </md-card-content>
+              </md-card>
+            </md-list-item>
+          </div>
+        </md-content>
+			</md-tab>
+		</md-tabs>
+    </md-dialog-content>
+</md-dialog>

@@ -1,0 +1,21 @@
+<section class="section-flex-box dashboard-section full-height" flex="">
+  <div class="symptoms-row-one full-height"  id="symptoms-section" flex="">
+      <md-card class="symptoms-row-one-card" ng-repeat="category in symptoms"
+        ng-click="sweetAlert($index)">
+        <md-card-content layout="column" layout-align="center center">
+          <div class="full-width" layout="row" layout-align="center center">
+            <i class="fa fa-medkit fa-4x symptoms-image"></i>
+          </div>
+          <div flex="10"></div>
+          <md-subheader class="full-width border-bottom padding-zero" layout="row" layout-align="center center">
+            <h2 class="poiretOne-font margin-zero">
+              {{category.name}}
+            </h2>
+          </md-subheader>
+          <span class="padding-ten">
+            {{category.description}}
+          </span>
+        </md-card-content>
+      </md-card>
+  </div>
+<section>

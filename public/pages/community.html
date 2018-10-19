@@ -1,0 +1,58 @@
+<div flex layout="column" class="community-main">
+  <div flex="50" class="community-backdrop" layout="column">
+    <h1 class="margin-zero">My Community</h1>
+  </div>
+  <div class="community-backdrop-menu" flex="10">
+    <div class="community-menu-item" ng-click="changemenu('community')"
+      ng-class="{'community-menu-selected': community}">
+      Success Stories
+    </div>
+    <div class="community-menu-item" ng-click="changemenu('blog')"
+      ng-class="{'community-menu-selected': !community}">
+      Blog
+    </div>
+    <div class="community-menu-item">
+      Virtual Chat
+    </div>
+  </div>
+  <div flex-gt-md="80" flex-md="80" flex-sm="100" flex-xs="100" class="community-content" layout="row">
+    <md-card id="success-stories-card" class="md-whiteframe-14dp success-stories-card">
+      <md-card-content>
+        <md-card ng-repeat="item in success" class="success-story md-whiteframe-6dp">
+          <md-card-content layout="column">
+            <div flex="70" style='background: url({{item.imageURL}});background-repeat: no-repeat;background-color:inherit;background-size: contain;background-position: center;' class="community-image community-image-desc">
+
+            </div>
+            <div flex="30">
+                <p>
+                  {{item.name}}
+                </p>
+            </div>
+          </md-card-content>
+        </md-card>
+      </md-card-content>
+    </md-card>
+    <md-card id="blog-card" class="md-whiteframe-14dp blog-card display-none">
+      <md-card-content>
+        <md-card ng-repeat="item in blogPosts" class="blog-story md-whiteframe-6dp">
+          <md-card-content layout="column">
+            <div flex="70" class="blog-image blog-image-desc"
+              style='background: url({{item.imageURL}});background-repeat: no-repeat;background-color:inherit;background-size: cover;background-position: center;'>
+
+            </div>
+            <div flex="15">
+                <p>
+                  {{item.name}}
+                </p>
+            </div>
+            <div flex="5" layout="row" layout-align="end end">
+                <md-button class="md-icon-button"><i class="fa fa-thumbs-up"></i></md-button>
+                <md-button class="md-icon-button"><i class="fa fa-share-alt"></i></md-button>
+                <md-button class="md-icon-button"><i class="fa fa-comment"></i></md-button>
+            </div>
+          </md-card-content>
+        </md-card>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

@@ -1,0 +1,530 @@
+<md-dialog aria-label="notification" class="expense-dialog" layout="column" ng-cloak>
+  <div flex="25" class="expense-nav">
+    <div class="expense-nav-item" hide-gt-md hide-md ng-click="changeNav('previous')">
+      <i class="fa fa-chevron-left fa-2x"></i>
+      <span class="expense-nav-heading">Previous</span>
+    </div>
+    <div hide-gt-md hide-md class="expense-nav-item expense-nav-item-selected">
+      <i class={{navItems[initialIndex].icon}}></i>
+      <span class="expense-nav-heading">{{navItems[initialIndex].name}}</span>
+    </div>
+    <div ng-repeat="item in navItems"
+      class="expense-nav-item" ng-class="{'expense-nav-item-selected': $index === selectedMenu}"
+      ng-click="selectmenu($index, item.id)" hide-sm hide-xs>
+      <i class={{item.icon}}></i>
+      <span class="expense-nav-heading">{{item.name}}</span>
+    </div>
+    <div class="expense-nav-item" hide-gt-md hide-md ng-click="changeNav('next')">
+      <i class="fa fa-chevron-right fa-2x"></i>
+      <span class="expense-nav-heading">Next</span>
+    </div>
+  </div>
+  <div flex="75" class="expense-dialog-content">
+    <div class="expense-content-card" id="account-details" layout="column">
+      <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Customer Id</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>159324</span>
+		  </div>
+	  </div>
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Type of Loan</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Consumer Durable</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Rate Of Interset</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>0.00%</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Linked Account</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>View Linked Account</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Disbursement Details</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Amount of Rs.29,574 -Disbursed on 06-06-2015</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Cibil Score</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>794</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Charges</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Rs.0</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Broken Period</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span></span>
+		  </div>
+	  </div>
+    </div>
+    <div class="expense-content-card display-none" id="emi-details">
+      <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Repayment</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Montly(12/Yr)</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Repayment Mode</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>AUTO-DEBIT From STANDARD CHARTERTED BANK LTD, </span>
+		  </div>
+	  </div>
+
+	  <div layout="row"class="expense-dialog-details">
+		  <div flex="20">
+			<span>1st EMI Due Date</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>02-07-2015</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Next EMI Due Date on</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span></span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>EMI Amount</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Rs.3900</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Last EMI Date</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span></span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>No.of EMI's Paid</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Rs.10</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>No.of EMI's Pending</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>0</span>
+		  </div>
+	  </div>
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Mode Of Payment</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>AUTO-DEBIT</span>
+		  </div>
+	  </div>
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Adv EMI Recieved</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Rs.7,800</span>
+		  </div>
+	  </div>
+    </div>
+    <div class="expense-content-card display-none" id="charge-details">
+      <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Customer Id</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>159324</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Type of Loan</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Consumer Durable</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Rate Of Interset</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>0.00%</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Linked Account</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>View Linked Account</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Disbursement Details</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Amount of Rs.29,574 -Disbursed on 06-06-2015</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Cibil Score</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>794</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Charges</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Rs.0</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Broken Period</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span></span>
+		  </div>
+	  </div>
+    </div>
+    <div class="expense-content-card display-none" id="account-statement">
+      <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Customer Id</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>159324</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Type of Loan</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Consumer Durable</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Rate Of Interset</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>0.00%</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Linked Account</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>View Linked Account</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Disbursement Details</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Amount of Rs.29,574 -Disbursed on 06-06-2015</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Cibil Score</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>794</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Charges</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Rs.0</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Broken Period</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span></span>
+		  </div>
+	  </div>
+    </div>
+    <div class="expense-content-card display-none" id="repayment-schedule">
+      <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Customer Id</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>159324</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Type of Loan</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Consumer Durable</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Rate Of Interset</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>0.00%</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Linked Account</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>View Linked Account</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Disbursement Details</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Amount of Rs.29,574 -Disbursed on 06-06-2015</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Cibil Score</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>794</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Charges</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span>Rs.0</span>
+		  </div>
+	  </div>
+
+	  <div layout="row" class="expense-dialog-details">
+		  <div flex="20">
+			<span>Broken Period</span>
+		  </div>
+		  <div flex="5"></div>
+		  <div flex="10">|</div>
+		   <div flex="5"></div>
+		   <div flex="70">
+			<span></span>
+		  </div>
+	  </div>
+    </div>
+  </div>
+</md-dialog>

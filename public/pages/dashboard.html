@@ -1,0 +1,579 @@
+<div class="nav-bubbles">
+    <div layout="row" class="nav-bubbles-row" ng-class="{'nav-compress': navOpened}">
+        <md-button class="md-fab md-mini md-raised nav-btn">
+            <a href="#/main/overview#about"><i class="fa fa-home"></i></a>
+        </md-button>
+        <div class="bubble">
+            <center>About</center>
+        </div>
+    </div>
+    <div layout="row" class="nav-bubbles-row" ng-class="{'nav-compress': navOpened}">
+        <md-button class="md-fab md-mini md-raised nav-btn">
+            <a href="#/main/overview#types"><i class="fa fa-list"></i></a>
+        </md-button>
+        <div class="bubble">
+            <center>Types</center>
+        </div>
+    </div>
+    <div layout="row" class="nav-bubbles-row" ng-class="{'nav-compress': navOpened}">
+        <md-button class="md-fab md-mini md-raised nav-btn">
+            <a href="#/main/overview#treatment"><i class="fa fa-plus-circle"></i></a>
+        </md-button>
+        <div class="bubble">
+            <center>Treatment</center>
+        </div>
+    </div>
+    <div layout="row" class="nav-bubbles-row" ng-class="{'nav-compress': navOpened}">
+        <md-button class="md-fab md-mini md-raised nav-btn">
+            <a href="#/main/overview#signs"><i class="fa fa-map-signs"></i></a>
+        </md-button>
+        <div class="bubble">
+            <center>Signs</center>
+        </div>
+    </div>
+    <div layout="row" class="nav-bubbles-row" ng-class="{'nav-compress': navOpened}">
+        <md-button class="md-fab md-mini md-raised nav-btn">
+            <a href="#/main/overview#diet"><i class="fa fa-cutlery"></i></a>
+        </md-button>
+        <div class="bubble">
+            <center>Diet</center>
+        </div>
+    </div>
+    <div layout="row" class="nav-bubbles-row zindex-two" ng-class="{'nav-compress': navOpened}">
+        <md-button class="md-fab md-mini md-raised nav-btn" ng-click="toggleBubbles()">
+            <i class="fa fa-plus" ng-if="navOpened"></i>
+            <i class="fa fa-minus" ng-if="!navOpened"></i>
+        </md-button>
+        <div class="bubble" ng-if="navOpened">
+            <center>Open Menu</center>
+        </div>
+        <div class="bubble" ng-if="!navOpened">
+            <center>Close Menu</center>
+        </div>
+    </div>
+    <div layout="row" class="nav-bubbles-row" ng-class="{'nav-compress': navOpened}">
+        <md-button class="md-fab md-mini md-raised nav-btn">
+            <a href="#/main/overview#prescription"><i class="fa fa-ellipsis-h"></i></a>
+        </md-button>
+        <div class="bubble">
+            <center>Prescription</center>
+        </div>
+    </div>
+    <div layout="row" class="nav-bubbles-row" ng-class="{'nav-compress': navOpened}">
+        <md-button class="md-fab md-mini md-raised nav-btn">
+            <a href="#/main/overview#appointments"><i class="fa fa-calendar-check-o"></i></a>
+        </md-button>
+        <div class="bubble">
+            <center>Appointments</center>
+        </div>
+    </div>
+    <div layout="row" class="nav-bubbles-row" ng-class="{'nav-compress': navOpened}">
+        <md-button class="md-fab md-mini md-raised nav-btn">
+            <a href="#/main/overview#recovery"><i class="fa fa-hand-spock-o"></i></a>
+        </md-button>
+        <div class="bubble">
+            <center>Recovery</center>
+        </div>
+    </div>
+    <div layout="row" class="nav-bubbles-row" ng-class="{'nav-compress': navOpened}">
+        <md-button class="md-fab md-mini md-raised nav-btn">
+            <a href="#/main/overview#timeline"><i class="fa fa-clock-o"></i></a>
+        </md-button>
+        <div class="bubble">
+            <center>TImeline</center>
+        </div>
+    </div>
+</div>
+<div class="chat-bot" ng-class="{'open-chat': chatOpened}">
+  <div class="chat-header">
+    <md-button class="md-icon-button toggle-chat-trigger" ng-click="toggleChat()">
+      <i class="fa fa-plus" ng-if="!chatOpened"></i>
+      <i class="fa fa-minus" ng-if="chatOpened"></i>
+    </md-button>
+  </div>
+  <div class="chat-content">
+
+  </div>
+  <div class="chat-type">
+
+  </div>
+</div>
+<section class="intro dashboard-section overview-section" id="diet-section">
+    <a name="appointments"></a>
+    <div class="content">
+        <h1 class="margin-zero heading-font poiretOne-font">Appointments</h1>
+        <div layout-gt-md="row" layout="column" class="padding-ten">
+            <div flex="30" layout="column">
+                <md-card class="md-whiteframe-8dp upcoming-card appointment-data-card" ng-repeat="items in userDetails.record.appointments | limitTo:2 track by $index">
+                    <md-card-content>
+                        <span class="remove-appointment">
+                          <md-button class="md-icon-button" ng-click="removeAppointment($index)">
+                            <i class="fa fa-times"></i>
+                          </md-button>
+                        </span>
+                        <div class="upcoming-appointment">
+                            <div class="upcoming-appointment-header">
+                                <div class="upcoming-appointment-image1" style="background: url({{items.imagePath}});background-repeat: no-repeat;background-position: center;background-color:inherit;background-size: contain;">
+
+                                </div>
+                                <div class="upcoming-appointment-text">
+                                    Upcoming Appointment:
+                                    <span>
+                                      Dr. {{items.doctor}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="upcoming-appointment-content">
+                                {{items.date}} at {{items.time}}
+                            </div>
+                        </div>
+                    </md-card-content>
+                </md-card>
+                <md-list-item class="appointment-list width-20" ng-click="moreAppointments($event)" layout="row" layout-align="center center">
+                    <span class="font-600">More..</span>
+                </md-list-item>
+            </div>
+            <div flex="10"></div>
+            <div flex="30" layout="column" layout-align="center center">
+                <h2 class="margin-zero poiretOne-font">Create new Appointment</h2>
+                <div layout="row" class="padding-ten">
+                    <md-list-item class="appointment-list" ng-click="selectDoctor($event)" layout="row" layout-align="center center" ng-if="!isDoctorSelected">
+                        <span class="font-600">Find a Doctor</span>
+                    </md-list-item>
+                    <div ng-if="isDoctorSelected" class="display-doctor" flex ng-class="{'display-doctor-animate': isDoctorSelected}">
+                        <div class="display-doctor-image" style="min-width: 150px;background: url({{doctors[selectedDocIndex].imagepath}});background-repeat: no-repeat;background-position: center;background-size: contain;">
+
+                        </div>
+                        <div class="display-doctor-details">
+                            <span class="font-600">
+                            Doctor: {{doctors[selectedDocIndex].name}}
+                            <md-buton class="md-icon-button" ng-click="resetDoc()">
+                                <i class="fa fa-refresh"></i>
+                            </md-buton>
+                          </span>
+                            <span class="font-600">
+                            Depatrment: {{doctors[selectedDocIndex].department}}
+                          </span>
+                            <span class="font-600">
+                            Email: {{doctors[selectedDocIndex].email}}
+                          </span>
+                            <span class="font-600">
+                            Phone: {{doctors[selectedDocIndex].phone}}
+                          </span>
+                        </div>
+                    </div>
+                </div>
+                <div layout="row" class="padding-ten">
+                    <span class="font-600">Date: </span>
+                    <input type="text" id="departure" ng-model="appointmentDate" class="custom-droppers" />
+                </div>
+                <div layout="row" class="padding-ten">
+                    <span class="font-600">Time: </span>
+                    <input type="text" id="alarm" ng-model="appointmentTime" class="custom-droppers" />
+                </div>
+                <div layout="row" layout-align="center center">
+                    <md-button flex="50" class="md-icon-button" ng-click="setAppointment()">
+                        <i class="fa fa-check fa-2x"></i>
+                    </md-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="dashboard-section overview-section" id="diet-section">
+    <a name="prescription"></a>
+    <div class="content">
+        <h1 class="margin-zero heading-font poiretOne-font">My Prescriptions</h1>
+        <div layout-gt-md="row" layout="column" class="padding-ten">
+            <div flex="50" layout="column">
+                <md-card class="md-whiteframe-8dp prescription-card" ng-click="selectPrescription($event)">
+                    <md-card-content class="">
+                        <div class="prescription-appointment">
+                            <div class="prescription-header">
+                                <div class="upcoming-appointment-image">
+
+                                </div>
+                                <div class="presctext">
+                                    <span class="font-600 capitalize ">Prescribed By Doctor:</span>
+                                    <span class="font-600 capitalize ">Prescription</span>
+                                    <span class="font-600 capitalize "> <i class="fa fa-hospital-o"></i> Cure Hospital</span>
+                                </div>
+                            </div>
+                        </div>
+                    </md-card-content>
+                </md-card>
+                <md-card class="md-whiteframe-8dp prescription-card" layout="row" ng-click="selectPrescription($event)">
+                    <md-card-content class="" layout="row" flex layout-align="center center">
+                      <div class="presctext">
+                        <span class="font-600 capitalize "> <i class="fa fa-file-text-o"></i> View History</span>
+                      </div>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <div flex="50" layout="column" layout-align="center start">
+              <md-card class="md-whiteframe-8dp prescription-card" layout="row" ng-click="selectPrescription($event)">
+                  <md-card-content class="" layout="row" flex layout-align="center center">
+                      <div class="presctext">
+                        <span class="font-600 capitalize "> <i class="fa fa-file-text-o"></i> View PHR</span>
+                      </div>
+
+                  </md-card-content>
+              </md-card>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="dashboard-section overview-section">
+    <a name="recovery"></a>
+    <div class="content">
+        <h1 class="margin-zero heading-font poiretOne-font">My Recovery</h1>
+        <div layout="row" class="recovery-data">
+          <md-card class="recovery-today-card md-whiteframe-12dp">
+            <md-card-content layout="row">
+              <div class="liquid-guage-header" layout="column">
+                  <h1 class="margin-zero">&nbsp;</h1>
+                  <span flex>Blood Sugar Level</span>
+                  <span flex>Blood Pressure</span>
+                  <span flex>BMI</span>
+                  <span flex>Pulse</span>
+              </div>
+              <div class="liquid-guage" layout="column">
+                  <h1 class="margin-zero">Today</h1>
+                  <svg id="fillgauge2" width="65%" height="120" onclick="gauge2.update(NewValue());"></svg>
+                  <svg id="fillgauge3" width="65%" height="120" onclick="gauge3.update(NewValue());"></svg>
+                  <svg id="fillgauge4" width="65%" height="120" onclick="gauge4.update(NewValue());"></svg>
+                  <svg id="fillgauge5" width="65%" height="120" onclick="gauge5.update(NewValue());"></svg>
+              </div>
+            </md-card-content>
+          </md-card>
+          <md-card id="wellness-score" class="recovery-chart md-whiteframe-12dp recovery-score display-none" flex layout="row">
+            <md-card-content class="recovery-chart-content" flex layout="column">
+              <div flex="5" layout="row" layout-align="center center">
+                <md-button ng-click="showData('overview')" class="recovery-mode-btn"
+                  ng-class="{'recovery-selected': !wellnessScore}">
+                  Vitals Overview
+                </md-button>
+                <md-button ng-click="showData('score')" class="recovery-mode-btn"
+                  ng-class="{'recovery-selected': wellnessScore}">
+                  Wellness Score
+                </md-button>
+              </div>
+              <div class="recover-bars" ng-class="{'recovery-patient':patientIndex == $index}"
+                ng-repeat="rec in recoveryData" style="width: {{rec.value}}%">
+                {{rec.value}}
+                <span ng-if="patientIndex == $index"> - YOU</span>
+                <div class="recover-running"></div>
+                <div class="recover-name">{{rec.name}}</div>
+              </div>
+            </md-card-content>
+          </md-card>
+          <md-card id="wellness-overview" class="recovery-chart md-whiteframe-12dp recovery-overview" layout="row">
+            <md-card-content flex layout="column">
+              <div flex="5" layout="row" layout-align="center center">
+                <md-button ng-click="showData('overview')" class="recovery-mode-btn"
+                  ng-class="{'recovery-selected': !wellnessScore}">
+                  Vitals Overview
+                </md-button>
+                <md-button ng-click="showData('score')" class="recovery-mode-btn"
+                  ng-class="{'recovery-selected': wellnessScore}">
+                  Wellness Score
+                </md-button>
+              </div>
+              <div flex="95" layout="row">
+                <div id="mbars" flex="80">
+                </div>
+                <div class="btn-group-gauge pull-right" flex="20">
+                    <ul class="dropdown-menu recovery-menu" role="menu">
+                        <li>
+                          <a class="m" value="2014-02-19" href="#/main/overview">
+                            <md-button class="md-raised recovery-list-btn">
+                                Pulse
+                            </md-button>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="m" value="2014-02-21" href="#/main/overview">
+                            <md-button class="md-raised recovery-list-btn">
+                                Blood Pressure
+                            </md-button>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="m" value="2014-02-20" href="#/main/overview">
+                            <md-button class="md-raised recovery-list-btn">
+                                BMI
+                            </md-button>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="m" value="2014-02-22" href="#/main/overview">
+                            <md-button class="md-raised recovery-list-btn">
+                                Blood Sugar Level
+                            </md-button>
+                          </a>
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </md-card-content>
+          </md-card>
+        </div>
+    </div>
+</section>
+<section class="dashboard-section overview-section" id="symptoms-section">
+    <a name="signs"></a>
+    <div class="content">
+        <h1 class="margin-zero heading-font poiretOne-font">Signs & Symptoms</h1>
+        <div layout-gt-md="row" layout="column" class="padding-ten">
+            <div layout-gt-md="row" layout="column" class="padding-ten">
+
+                <div flex="30" layout="column" layout-align="center center">
+                    <h2 class="margin-zero poiretOne-font symptom-heading">General Symptoms</h2>
+                    <div layout="row">
+                        <div flex="50">
+                            <div class="box-card" ng-repeat="item in disease.symptoms">
+                                <div class="icon-class" style="background: url({{item.imagePath}});background-repeat: no-repeat;background-position: center;background-color:inherit;background-size: contain;">
+                                </div>
+                                <div class="content-class">
+                                    <span>{{item.name}}</span>
+                                    <button class="content-button1">
+                                      Learn More
+                                      <!-- //add ng-click and send url
+                                          //to the click function
+                                         //and navigate to the page
+                                         //using js
+                                         //something like $location
+                                        -->
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div flex="5" layout="column"></div>
+                        <div flex="70" layout="column" layout-align="center center" class="mysymptoms">
+                            <h2 class="margin-zero poiretOne-font">My Signs & Symptoms</h2>
+                            <div layout="row">
+                                <div class="box-card1" ng-repeat="item in userDetails.record.symptoms">
+                                    <center>
+                                        <div class="icon-class1" style="background: url({{item.imagePath}});background-repeat: no-repeat;background-position: center;background-color:inherit;background-size: contain;">
+
+                                        </div>
+                                    </center>
+                                    <center>
+                                        <div class="title-class1">
+                                            <span>
+                          									  <h3>{{item.name}}</h3>
+                          									</span>
+                                        </div>
+                                    </center>
+                                    <center>
+                                        <div class="content-class1">
+                                            <span>
+                          									  {{item.description}}
+                          									</span>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+<section class="dashboard-section overview-section" id="diet-section">
+    <a name="diet"></a>
+    <div class="content">
+        <h1 class="margin-zero heading-font poiretOne-font">Diet & Healthy Living</h1>
+        <div layout-gt-md="row" layout="column" class="padding-ten">
+            <div flex="30" layout="column" layout-align="center center">
+                <h2 class="margin-zero poiretOne-font">Recommended Diet</h2>
+                <div class="my-diet-div">
+                    <div class="my-general-diet-image">
+
+                    </div>
+                    <div class="my-diet-name">
+                        Leafy Veg Salad
+                    </div>
+                    <div class="my-diet-details">
+                        <span>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                          <i class="fa fa-star-o"></i>
+                        </span>
+                        <span>
+                          120 Calories/Serving
+                        </span>
+                        <span>
+                          Protein 50g | Fat 25g | Carbohydrates 70g
+                        </span>
+                    </div>
+                    <div class="my-diet-btn">
+                        <md-list-item class="appointment-list " ng-click="selectGeneralDiet($index, $event)" layout="row" layout-align="center center">
+                            <span class="font-600">More......</span>
+                        </md-list-item>
+                    </div>
+                </div>
+
+            </div>
+
+            <div flex="5"></div>
+            <div flex="30" layout="column" layout-align="center center">
+                <h2 class="margin-zero poiretOne-font">General Diet</h2>
+                <div class="my-diet-div">
+                    <div class="my-diet-image">
+
+                    </div>
+                    <div class="my-diet-name">
+                        Pasta Ravioli
+                    </div>
+
+                    <div class="my-diet-details">
+                        <span>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                        </span>
+                        <span>
+                          420 Calories/Serving
+                        </span>
+                        <span>
+                          Protein 25g | Fat 50g | Carbohydrates 80g
+                        </span>
+                    </div>
+                    <div class="my-diet-btn">
+                        <md-list-item class="appointment-list " ng-click="selectRecommendedDiet($index, $event)" layout="row" layout-align="center center">
+                            <span class="font-600">More Recommendations</span>
+                        </md-list-item>
+                    </div>
+                </div>
+                <!-- <md-list-item ng-repeat="diet in userDetails.record.diet.details | limitTo:3 track by $index" class="appointment-list full-width" ng-click="selectDiet($index, $event)" layout="row" layout-align="center center">
+                      <span class="font-600">{{diet.name}}</span>
+                  </md-list-item> -->
+            </div>
+            <div flex="5"></div>
+            <div flex="30" layout="column" layout-align="center center">
+                <h2 class="margin-zero poiretOne-font">Fitness Routine</h2>
+                <div class="my-diet-div">
+                    <div class="my-general-fitness-image">
+
+                    </div>
+                    <div class="my-diet-name">
+                        Running
+                    </div>
+                    <div class="my-diet-details">
+                        <span>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                          <i class="fa fa-star-o"></i>
+                          <i class="fa fa-star-o"></i>
+                        </span>
+                        <span>
+                          3 Miles / day
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dashboard-section overview-section" id="diet-section">
+    <a name="timeline"></a>
+    <div class="content">
+        <h1 class="margin-zero heading-font poiretOne-font">Timeline</h1>
+        <timeline>
+            <!-- can also hard-code to side="left" or side="right" -->
+            <timeline-event    ng-repeat="event in events | limitTo:3" side="{{side}}">
+                <!-- uses angular-scroll-animate to give it some pop -->
+                <timeline-badge class="{{event.badgeClass}} timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
+                    <i style="margin-top: 15px;" class=" {{event.badgeIconClass}}"></i>
+                </timeline-badge>
+
+                <!-- uses angular-scroll-animate to give it some pop -->
+                <timeline-panel  ng-click="showDetails($index, $event, event)" class="{{event.badgeClass}} timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
+                    <timeline-heading>
+                        <h6>{{event.title}}</h6>
+                        <p>{{event.content}}</p>
+                        <p ng-if="event.when">
+                            <small class="text-muted"><i class="fa fa-clock-o " style="margin-right:3px"></i>{{event.when}}</small>
+                        </p>
+                    </timeline-heading>
+                    <p ng-bind-html="event.contentHtml"></p>
+                    <timeline-footer ng-if="event.footerContentHtml">
+                        <span ng-bind-html="event.footerContentHtml"></span>
+                    </timeline-footer>
+                </timeline-panel>
+            </timeline-event>
+            <md-list-item class="appointment-list-invert detailedbtn" ng-click="selectMoreDetails($index, $event)" layout="row" layout-align="center center" ng-if="!isDoctorSelected">
+                <span class="font-600">More Details</span>
+            </md-list-item>
+        </timeline>
+    </div>
+</section>
+
+<section class="dashboard-section overview-section" id="treatment-section">
+    <a name="treatment"></a>
+    <div class="content">
+        <h1 class="margin-zero heading-font poiretOne-font">Need Help..?</h1>
+        <div class="helper-box">
+			<div class="helper-categories">
+				<button class="askQue launch-chatbot-btn" title="Ask a Question"
+					ng-repeat="item in ['Prescription', 'Appointments', 'Diet', 'Symptoms']">
+					{{item}}
+				</button>
+			</div>
+			<div class="helper-chat-launch">
+				<p class="helper-chabot-desc">
+					Hi, i am Jan. If you have any queries, Press the Launch button and ask them.
+				</p>
+				<div class='robo'>
+				  <span class='cortana-loader'></span>
+				</div>
+				<button class="askQue launch-chatbot-btn" href="javascript:void(0)"
+					onclick="startChatBot();" title="Ask a Question">
+					Launch  Chatbot
+				</button>
+			</div>
+		</div>
+
+
+    </div>
+</section>
+
+<section class="dashboard-section overview-section" id="overview-section">
+    <a name="about"></a>
+    <div class="content">
+        <h1 class="margin-zero heading-font poiretOne-font capitalize">
+          {{disease.overview.title}}
+        </h1>
+        <p class="poiretOne-font-normal right-padding">{{disease.overview.description}}</p>
+    </div>
+</section>
+<section class="dashboard-section overview-section" id="types-section">
+    <a name="types"></a>
+    <div class="content">
+        <h1 class="margin-zero heading-font poiretOne-font capitalize">Types of {{disease.overview.title}}</h1>
+        <div class="disease-type-box page-flip" ng-repeat="type in disease.types">
+            <h4>{{type.type}}</h4>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="poiretOne-font">
+    <h1 class="margin-zero">@Tata Consultancy Services</h1>
+</footer>
+<script>
+    $("#alarm").timeDropper();
+</script>
+<script>
+    $("#departure").dateDropper();
+</script>
+});

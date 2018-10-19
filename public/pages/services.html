@@ -1,0 +1,39 @@
+<section class="section-flex-box dashboard-section full-height" flex="">
+  <!-- <div class="symptoms-row-one full-height"  id="symptoms-section" flex="">
+      <md-card class="services-row-one-card md-whiteframe-24dp" ng-repeat="category in servicesList"
+         ng-class="{'service-selected': selectedService === $index}"
+         layout="column">
+        <md-card-content layout="column" class="padding-zero" flex>
+          <div class="service-main full-width" flex layout="column" layout-align="center center">
+            <div flex class="full-width outline-none service-details-trigger" layout="column" layout-align="center center"
+              style="background: url({{category.backgroundimage}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+                <md-button class="service-btn" ng-click="registerService()">Register</md-button>
+            </div>
+            <md-subheader class="padding-zero" layout="row" layout-align="center center">
+              <h2 class="poiretOne-font margin-zero">
+                {{category.name}}
+              </h2>
+            </md-subheader>
+            <span class="padding-ten">
+              {{category.description}}
+            </span>
+          </div>
+        </md-card-content>
+      </md-card>
+
+  </div> -->
+  <div class="new-service-main">
+    <div class="new-service-item" ng-repeat="service in servicesList">
+      <div class="new-service-background"
+        style="background: url({{service.backgroundimage}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+
+      </div>
+      <div class="new-service-name" ng-click="selectService($index, $event)">
+        <i class={{service.iconClass}}></i>
+        <h2 class="poiretOne-font margin-zero">
+          {{service.name}}
+        </h2>
+      </div>
+    </div>
+  </div>
+<section>

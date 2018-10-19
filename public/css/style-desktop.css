@@ -1,0 +1,71 @@
+/* ******************* desktop css start *******************  */
+@media only screen and (min-width: 600px) {
+  .desktop-heading{
+    display: block;
+    white-space: nowrap;
+  }
+  .new-service-item {
+    width: 25%;
+    height: 50%;
+    float: left;
+    position: relative;
+    border: 1px solid #fff;
+  }
+  .service-dialog {
+    height: 80%;
+    width: 60%;
+    border-radius: 50px;
+  }
+  .count-down-timer {
+
+  }
+  .mobile-heading{
+    display: none;
+  }
+  .section-row-one{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    min-height: 200px;
+  }
+  .disease-details{
+    display: flex;
+    flex-direction: row;
+  }
+  .disease-description{
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .symptoms-row-one{
+    min-height: 200px;
+    justify-content: center;
+  }
+  .section-row-one-card{
+    width: 30%;
+  }
+  .symptoms-row-one-card{
+    width: 23%;
+    min-height: 300px;
+    float: left;
+  }
+  .services-row-one-card{
+    width: 23%;
+    min-height: 300px;
+    float: left;
+  }
+  .login-content{
+    width: 40%;
+    position: fixed;
+    top: 50%;
+    left: 35%;
+  }
+  .login-heading{
+	    margin-top: 15%;
+
+  }
+}
+/* ******************** desktop css end ********************  */

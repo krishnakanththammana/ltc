@@ -1,0 +1,173 @@
+<section layout="row" flex="">
+
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop="" md-whiteframe="4">
+
+        <md-toolbar class="primary-background" layout="row">
+            <h4 class="white-font margin-zero" layout="row" layout-align="start center">
+              <md-button class="md-icon-button" id="close-sidenav-btn" aria-label="Sidenav-Close"
+                ng-click="close()">
+                  <i class="fa fa-chevron-left white-font"></i>
+              </md-button>
+              Menu
+            </h4>
+        </md-toolbar>
+        <md-content layout-padding="">
+            <md-list-item ng-repeat="item in sideNavJSON" ng-click="methodFactory.changeState(item.state); close()">
+                {{item.name}}
+            </md-list-item>
+        </md-content>
+
+    </md-sidenav>
+
+    <md-content flex="">
+        <md-toolbar id="white-background" class="animated fadeIn position-fixed">
+            <div class="md-toolbar-tools" layout="row">
+                <md-button class="md-icon-button " aria-label="Sidenav" ng-click="toggleLeft('left')">
+                    <i class="fa fa-bars primary-font"></i>
+                </md-button>
+                <h2>
+                  <span class="primary-font desktop-heading">
+                    <strong>P</strong>atient
+                    <strong>C</strong>are Application
+                  </span>
+                  <span class="primary-font mobile-heading">
+                    <strong>P C A</strong>
+                  </span>
+                </h2>
+                <span flex></span>
+                <input type="checkbox" id="utility-chk-box">
+                <label for="utility-chk-box" class="utility-trigger">
+                  <i class="fa fa-wrench"></i>
+                </label>
+                <input type="checkbox" id="counter-chk-box">
+                <label for="counter-chk-box" class="timer-trigger">
+                  <i class="fa fa-clock-o"></i>
+                </label>
+                <div class="timer-block md-whiteframe-24dp">
+                  <div class="timer-heading arrow">
+                    <div class="arrow-up"></div>
+                    <span>Emergency Waiting Time</span>
+                  </div>
+                  <div class="timer-content flex-layout-column-center">
+                    <div id="timer" class="count-down-timer"></div>
+                  </div>
+                  <div class="timer-footer flex-layout-column-center">
+                    <span class="emergency-booking flex-layout-column-center" ng-click="bookEmergency()">
+                        <span>Book Emergency Appointment</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="utility-block md-whiteframe-24dp">
+                  <div class="utility-heading arrow">
+                    <div class="arrow-up"></div>
+                    <span>Utilities</span>
+                  </div>
+                  <div class="utility-content">
+                    <div class="utility-options" ng-class="{'hide-utility-option': !hideOptions}">
+                      <span class="utility-type" ng-click="selectUtility('transfer')"><span>Transfer Records</span><i class="fa fa-files-o fa-4x"></i></span>
+                      <span class="utility-type" ng-click="selectUtility('payment')"><span>Payment</span><i class="fa fa-usd fa-4x"></i></span>
+                    </div>
+                    <div class="utility-payment-option" ng-class="{'show-utility': utilityType==='payment'}">
+                      <div class="payment-content" layout="column" layout-align="center center">
+                        Outstanding Amount: $20
+                        <button class="payment-btn" ng-click="paymentDone()">
+                            Pay Now
+                        </button>
+                      </div>
+                      <md-list-item class="reset-utility" ng-click="resetUtilities()">
+                        <div class="reset-utility-div">Done</div>
+                      </md-list-item>
+                    </div>
+                    <div class="utility-transfer-option" ng-class="{'show-utility': utilityType==='transfer'}">
+                      <div class="transfer-content">
+                        <div class="transfer-people sender">
+                          <span class="transfer-people-name">YOU</span>
+                        </div>
+                        <div class="transfer-animation">
+                          <div class="transfer-bubble tbubble1">
+
+                          </div>
+                          <div class="transfer-bubble tbubble2">
+
+                          </div>
+                          <div class="transfer-bubble tbubble3">
+
+                          </div>
+                        </div>
+                        <div class="transfer-people reciever">
+                          <span class="transfer-people-name">Dr. Molly Cooper</span>
+                        </div>
+                      </div>
+                      <md-list-item class="reset-utility" ng-click="resetUtilities()">
+                        <div class="reset-utility-div">Done</div>
+                      </md-list-item>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div id="timer" class="count-down-timer"></div> -->
+                <md-menu class="toolbar-menu-icon">
+                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                       <i class="fa fa-bell primary-font"></i>
+                    </md-button>
+                    <md-menu-content class="notification-content md-whiteframe-24dp main-menu-content">
+                        <md-menu-item ng-repeat="item in prescriptionList"
+                          class="notification-item" layout="row">
+                            <div class="notification-image" style='background: url({{item.imageURL}});background-repeat: no-repeat;background-position: center;background-size: cover;'>
+
+                            </div>
+                            <div class="notification-text"  ng-click="viewNotification($index, $event)">
+                              <span class="notification-subject">{{item.name}}</span>
+                              <span class="notification-category">{{item.info}}</span>
+                            </div>
+                            <div class="notification-btn">
+                              <button class="notification-btn-item" ng-if="item.info=='prescription'" ng-click="prescriptional($index)">
+                                 <i class="fa fa-plus"></i>
+                              </button>
+                              <button class="notification-btn-item" ng-if="item.info=='diet'" ng-click="dietal($index)">
+                                 <i class="fa fa-plus"></i>
+                              </button>
+                            </div>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <md-menu class="toolbar-menu-icon">
+                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                       <i class="fa fa-user primary-font"></i>
+                    </md-button>
+                    <md-menu-content class="md-whiteframe-24dp main-menu-content">
+                        <md-menu-item class="my-profile" layout="row">
+                          <div flex="40" class="my-profile-photo">
+
+                          </div>
+                          <div flex="60" class="my-profile-details" layout="column">
+                              <div layout="row">
+                                <span>Name: </span>
+                                <span flex="10"></span>
+                                <span>{{userDetails.name}}</span>
+                              </div>
+                              <div layout="row">
+                                <span>ID: </span>
+                                <span flex="10"></span>
+                                <span>987256B3c</span>
+                              </div>
+                              <div layout="row">
+                                <span>Blood Group: </span>
+                                <span flex="5"></span>
+                                <span>B-</span>
+                              </div>
+                              <div layout="row" layout-align="center center">
+                                <md-button class="md-icon-button" ng-click="morePersonal($event)">
+                                  <i class="fa fa-users open-details-dialog-trigger"></i>
+                                </md-button>
+                              </div>
+                          </div>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+        </md-toolbar>
+        <div ui-view class="main-ui" ng-class="{'main-ui-shrink': isOpenLeft()}" id="main-ui-scroll">
+
+        </div>
+    </md-content>
+</section>
