@@ -57,7 +57,7 @@ app.controller('loginCtrl', function($scope, $http, $state, $mdSidenav, $timeout
         "phr":{
       
         }
-      });
+      }});
       $scope.methodFactory.changeState('main.overview');
 //       var res2 = $http(req2);
 //       res2.success(function(data, status, headers, config) {
