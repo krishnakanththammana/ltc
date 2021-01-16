@@ -26,7 +26,69 @@ app.controller('loginCtrl', function($scope, $http, $state, $mdSidenav, $timeout
           params: data
       }
       document.getElementById('theme_css').href = 'css/cancer.css';
-      $scope.methodFactory.setUserData({name: "Jack", record: {}});
+      $scope.methodFactory.setUserData({name: "Jack", record: {
+        "name":"john",
+        "disease":"cancer",
+        "symptoms":[{
+        "name": "Migrane",
+        "imagePath": "../images/migrane.png",
+        "description": "Migraine is a primary headache disorder characterized by recurrent headaches that are moderate to severe."
+        },{
+        "name": "Stomach Pain",
+        "imagePath": "../images/stomachpain.png",
+        "description": "Abdominal pain is pain that occurs between the chest and pelvic regions."
+        }
+        ],
+        "appointments":[
+      
+        ],
+        "recovery":{
+      
+        },
+        "diet":{
+      
+        },
+        "notifications":[
+      
+        ],
+        "emr":{
+      
+        },
+        "phr":{
+      
+        }
+      },{
+        "name":"brad",
+        "disease":"Diabetes",
+        "symptoms":[{
+        "name": "HeadAche",
+        "imagePath": "../images/headache.png",
+        "description": "Headache, also known as cephalalgia,is the symptom of pain anywhere in the region of the head or neck."
+        },{
+        "name": "Fracture",
+        "imagePath": "../images/fracture.png",
+        "description": "A bone fracture is a medical condition in which there is a damage in the continuity of the bone."
+        }
+        ],
+        "appointments":[
+      
+        ],
+        "recovery":{
+      
+        },
+        "diet":{
+      
+        },
+        "notifications":[
+      
+        ],
+        "emr":{
+      
+        },
+        "phr":{
+      
+        }
+      });
       $scope.methodFactory.changeState('main.overview');
 //       var res2 = $http(req2);
 //       res2.success(function(data, status, headers, config) {
