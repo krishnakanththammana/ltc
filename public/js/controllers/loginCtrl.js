@@ -25,27 +25,30 @@ app.controller('loginCtrl', function($scope, $http, $state, $mdSidenav, $timeout
           },
           params: data
       }
-      var res2 = $http(req2);
-      res2.success(function(data, status, headers, config) {
-          console.log(data);
-          data[0].record = JSON.parse(data[0].record);
-          $scope.userDetails = data[0];
-          if($scope.userDetails.record.disease == 'cancer'){
-            console.log("cancerrrr");
-            document.getElementById('theme_css').href = 'css/cancer.css';
-          }
-          if($scope.userDetails.record.disease == 'Diabetes'){
-            console.log("diabetes");
-            document.getElementById('theme_css').href = 'css/diabetes.css';
-          }
-          $scope.methodFactory.setUserData($scope.userDetails);
-          $scope.methodFactory.changeState('main.overview');
-      });
-      res2.error(function(data, status, headers, config) {
-          alert("failure message: " + JSON.stringify({
-              data: data
-          }));
-      });
+      document.getElementById('theme_css').href = 'css/cancer.css';
+      $scope.methodFactory.setUserData({name: "Jack", record: {}});
+      $scope.methodFactory.changeState('main.overview');
+//       var res2 = $http(req2);
+//       res2.success(function(data, status, headers, config) {
+//           console.log(data);
+//           data[0].record = JSON.parse(data[0].record);
+//           $scope.userDetails = data[0];
+//           if($scope.userDetails.record.disease == 'cancer'){
+//             console.log("cancerrrr");
+//             document.getElementById('theme_css').href = 'css/cancer.css';
+//           }
+//           if($scope.userDetails.record.disease == 'Diabetes'){
+//             console.log("diabetes");
+//             document.getElementById('theme_css').href = 'css/diabetes.css';
+//           }
+//           $scope.methodFactory.setUserData($scope.userDetails);
+//           $scope.methodFactory.changeState('main.overview');
+//       });
+//       res2.error(function(data, status, headers, config) {
+//           alert("failure message: " + JSON.stringify({
+//               data: data
+//           }));
+//       });
     }
 
     // var reqProduct = {
